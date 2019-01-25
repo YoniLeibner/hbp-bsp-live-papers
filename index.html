@@ -16,19 +16,17 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/apdavison/neural-activity-visualizer@reorg/js/src/services.js"></script>
 	</head>
 	<body>
-		<div class="main">
+		<div class="main" ng-app="neo-visualizer">
 		<h2 class="title ">Human Brain Project - Brain Simulation Platform "Live Papers"</h2>
 		<ol>
 			2018
 			<a href="static/template/paper_template.html">
 				<img src="Fig/2013_03_06_cell03_789_H41_03.png">
 			</a>
-			<div ng-app="neo-visualizer">
-				<visualizer-view 
-						 source="https://raw.githubusercontent.com/YoniLeibner/guy_data/master/cell0603_03.mat"
-						 height=300>
-				</visualizer-view>
-			</div>
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/guy_data/master/cell0603_03.mat"
+					height=300>
+			</visualizer-view>			
 			<a href="static/template/paper_template.html">
 				<img src="Fig/2013_03_06_cell08_876_H41_05_Cell2.png">
 			</a>
