@@ -19,26 +19,31 @@
 		<div class="main" ng-app="neo-visualizer">
 		<h2 class="title ">Human Brain Project - Brain Simulation Platform "Live Papers"</h2>
 		<ol>
-			div<id="block_container">
-				<div class="block1">
+			div<class="row">
+				<div class="col-md-4">
 					<a href="static/template/paper_template.html">
 						<img src="Fig/2013_03_06_cell03_789_H41_03.png">
 					</a>
+					<p>press for simulation</p>
+
+				</div>
+				<div class = "col-md-8">
 					<visualizer-view
 							source="https://raw.githubusercontent.com/YoniLeibner/guy_data/master/cell0603_03.mat"
 							height=300>
 					</visualizer-view>			
-					<p>press for simulation</p>
 				</div>
-				<div class="block2">
+				<div class="col-md-4">
 					<a href="static/template/paper_template.html">
 						<img src="Fig/2013_03_06_cell08_876_H41_05_Cell2.png">
 					</a>
+					<p>press for simulation</p>
+				</div>
+				<div class = "col-md-8">
 					<visualizer-view
 							source="https://raw.githubusercontent.com/YoniLeibner/guy_data/master/cell0603_03.mat"
 							height=300>
 					</visualizer-view>			
-					<p>press for simulation</p>
 				</div>
 			</div>
 		</ol>
