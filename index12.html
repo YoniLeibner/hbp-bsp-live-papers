@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	<title>Guy Eyal et al. 2018</title>   	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/apdavison/neural-activity-visualizer@reorg/js/src/visualizer.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/apdavison/neural-activity-visualizer@reorg/js/src/services.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/live_paper.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/NeuralEnsemble/neo-viewer@master/js/src/visualizer.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/NeuralEnsemble/neo-viewer@master/js/src/services.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.css">
+	<style>
+	#rcorners1 {
+	  border-radius: 25px;
+	  padding: 20px; 
+	  width: 100%;
+	  height: 100%;  
+	  background: #FFEBCD;
+	}
+	#rcorners2 {
+	  border-radius: 25px;
+	  padding: 20px; 
+	  width: 100%;
+	  height: 100%;
+	  background: #FFCC99;
+	}
+	   </style>
+	</head>
+   <body class="container">
+      <br>
+         <h2 id="rcorners1" style="font-family: 'Merriweather', serif; text-align:center; line-height: 1.25;">Human Cortical Pyramidal Neurons: From Spines to Spikes via Models</h2>
+      <div>
+         <p>Guy Eyal, Matthijs B. Verhoog, Guilherme Testa-Silva, Yair Deitcher, Ruth Benavides-Piccione, 
+		 Javier DeFelipe, Christiaan P. J. de Kock, Huibert D. Mansvelder and Idan Segev</p>
+      </div>
+      <table align="center" height="4" width =85%>
+	<tr>
+		<th bgcolor="990000"></th>
+		<th bgcolor="FF0000"></th>
+		<th bgcolor="FFFF00"></th>
+		<th bgcolor="FFFF99"></th>
+		<th bgcolor="00CCFF"></th>
+		<th bgcolor="0000FF"></th>
+		<th bgcolor="9900CC"></th>
+	</tr>      
+      </table>
+      <div>
+         <p>
+            <strong>Journal: </strong>
+            <a href="https://www.frontiersin.org/journals/cellular-neuroscience" target="_blank">
+            <span class="color_link">Frontier In Cellular Neuroscience</span>
+            </a>
+	 </p>
+         <p>
+            <strong>Citation: </strong> Migliore R, Lupascu CA, Bologna LL, Romani A, Courcol J-D, Antonel S, et al. (2018) The physiological variability of channel density in hippocampal CA1 pyramidal cells and interneurons explored using a unified data-driven
+            modeling workflow. PLoS Comput Biol 14(9): e1006423.
+         </p>
+         <p>
+            <strong>DOI: </strong>
+            <a href="https://www.frontiersin.org/articles/10.3389/fncel.2018.00181/full" target="_blank">
+            <span class="color_link">https://www.frontiersin.org/articles/10.3389/fncel.2018.00181/full</span>
+            </a>
+	 </p>
+      </div>
+	 <table align="center" height="4" width =85%>
+	<tr>
+		<th bgcolor="990000"></th>
+		<th bgcolor="FF0000"></th>
+		<th bgcolor="FFFF00"></th>
+		<th bgcolor="FFFF99"></th>
+		<th bgcolor="00CCFF"></th>
+		<th bgcolor="0000FF"></th>
+		<th bgcolor="9900CC"></th>
+	</tr>      
+      </table>
+	<br>
+      <div id ="rcorners1"  class="note rounded">
+         <h3>Abstract:</h3>
+         We present detailed models of pyramidal cells from human neocortex, including models on their excitatory synapses,
+	      dendritic spines, dendritic NMDA- and somatic/axonal Na+ spikes that provided new insights into signal processing
+	      and computational capabilities of these principal cells. Six human layer 2 and layer 3 pyramidal cells (HL2/L3 PCs)
+	      were modeled, integrating detailed anatomical and physiological data from both fresh and postmortem tissues from
+	      human temporal cortex. The models predicted particularly large AMPA- and NMDA-conductances per synaptic contact
+	      (0.88 and 1.31 nS, respectively) and a steep dependence of the NMDA-conductance on voltage. These estimates were
+	      based on intracellular recordings from synaptically-connected HL2/L3 pairs, combined with extra-cellular current
+	      injections and use of synaptic blockers, and the assumption of five contacts per synaptic connection. A large dataset
+	      of high-resolution reconstructed HL2/L3 dendritic spines provided estimates for the EPSPs at the spine head
+	      (12.7 ± 4.6 mV), spine base (9.7 ± 5.0 mV), and soma (0.3 ± 0.1 mV), and for the spine neck resistance (50–80 MO).
+	      Matching the shape and firing pattern of experimental somatic Na+-spikes provided estimates for the density of the
+	      somatic/axonal excitable membrane ion channels, predicting that 134 ± 28 simultaneously activated HL2/L3-HL2/L3 synapses
+	      are required for generating (with 50% probability) a somatic Na+ spike. Dendritic NMDA spikes were triggered in the
+	      model when 20 ± 10 excitatory spinous synapses were simultaneously activated on individual dendritic branches.
+	      The particularly large number of basal dendrites in HL2/L3 PCs and the distinctive cable elongation of their terminals
+	      imply that ~25 NMDA-spikes could be generated independently and simultaneously in these cells, as compared to ~14 in
+	      L2/3 PCs from the rat somatosensory cortex. These multi-sites non-linear signals, together with the large (~30,000)
+	      excitatory synapses/cell, equip human L2/L3 PCs with enhanced computational capabilities. Our study provides the most
+	      comprehensive model of any human neuron to-date demonstrating the biophysical and computational distinctiveness
+	      of human cortical neurons.
+      </div>
+      <h5>Resources</h5>
+	<div class="main" ng-app="neo-visualizer">
+	<div class="row">
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_06_cell03_789_H41_03.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell0603_08.mat"
+					height=300>
+			</visualizer-view>  
+		</div>
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_06_cell08_876_H41_05_Cell2.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell0603_08.mat"
+					height=300>
+			</visualizer-view>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_06_cell11_1125_H41_06.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell0603_11.mat"
+					height=300>
+			</visualizer-view>			
+		</div>
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_13_cell03_1204_H42_02.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell1303_03.mat"
+					height=300>
+			</visualizer-view>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_13_cell05_675_H42_04.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell1303_05.mat"
+					height=300>
+			</visualizer-view>			
+		</div>
+		<div class="col-md-1">
+			<a href="static/template/paper_template.html">
+				<img src="Fig/2013_03_13_cell06_945_H42_05.png">
+			</a>
+			<p>press for simulation</p>
+		</div>
+		<div class = "col-md-5">
+			<visualizer-view
+					source="https://raw.githubusercontent.com/YoniLeibner/hbp-bsp-live-papers/master/traces5/cell1303_06.mat"
+					height=300>
+			</visualizer-view>			
+		</div>
+	</div>
+      <p>Data and models: all data and models used in the paper are available at the links reported below:
+      </p>
+      <ul class="collapsible" data-collapsible="expandable">
+         <li class="active">
+            <div class="collapsible-header amber lighten-5">
+               <i class="material-icons">settings_input_antenna</i>Morphologies
+            </div>
+            <!-- option: leak_remove -->
+            <div class="collapsible-body ">
+               <p>Morphology files (in .asc format) used in the paper for each etype (see Table S5 of the Supplementary Material):</p>
+               <div style="margin-left:25px">
+                  <table class="striped">
+                     <tbody>
+                        <tr>
+                           <td>
+                              2013_03_06_cell03_789_H41_03
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_06_cell03_789_H41_03.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+			 <tr>
+                           <td>
+                              2013_03_06_cell08_876_H41_05_Cell2
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_06_cell08_876_H41_05_Cell2.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_06_cell11_1125_H41_06
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_06_cell11_1125_H41_06.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell03_1204_H42_02
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell03_1204_H42_02.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell05_675_H42_04
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell05_675_H42_04.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell06_945_H42_05
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell06_945_H42_05.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </li>
+      </ul>
+      <br>
+      <div class="rainbow-row">
+         <div></div> 
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+      <br>
+      <br>
+   </body>
+</html>
