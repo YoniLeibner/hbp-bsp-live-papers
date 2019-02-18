@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	<title>Guy Eyal et al. 2018</title>   	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/apdavison/neural-activity-visualizer@reorg/js/src/visualizer.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/apdavison/neural-activity-visualizer@reorg/js/src/services.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/live_paper.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/NeuralEnsemble/neo-viewer@master/js/src/visualizer.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/NeuralEnsemble/neo-viewer@master/js/src/services.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.css">
+	<style>
+	#rcorners1 {
+	  border-radius: 25px;
+	  padding: 20px; 
+	  width: 100%;
+	  height: 100%;  
+	  background: #FFEBCD;
+	}
+	#rcorners2 {
+	  border-radius: 25px;
+	  padding: 20px; 
+	  width: 100%;
+	  height: 100%;
+	  background: #FFCC99;
+	}
+	</style>
+   </head>
+   <body class="container">
+      <br>
+         <h2 id="rcorners1" style="font-family: 'Merriweather', serif; text-align:center; line-height: 1.25;">Human Cortical Pyramidal Neurons: From Spines to Spikes via Models</h2>
+      <div>
+      	<p>Guy Eyal, Matthijs B. Verhoog, Guilherme Testa-Silva, Yair Deitcher, Ruth Benavides-Piccione, 
+		 Javier DeFelipe, Christiaan P. J. de Kock, Huibert D. Mansvelder and Idan Segev</p>
+      </div>
+      <table align="center" height="4" width =85%>
+	<tr>
+		<th bgcolor="990000"></th>
+		<th bgcolor="FF0000"></th>
+		<th bgcolor="FFFF00"></th>
+		<th bgcolor="FFFF99"></th>
+		<th bgcolor="00CCFF"></th>
+		<th bgcolor="0000FF"></th>
+		<th bgcolor="9900CC"></th>
+	</tr>      
+      </table>
+      <div>
+         <p>
+            <strong>Journal: </strong>
+            <a href="https://www.frontiersin.org/journals/cellular-neuroscience" target="_blank">
+            <span class="color_link">Frontier In Cellular Neuroscience</span>
+            </a>
+	 </p>
+         <p>
+            <strong>DOI: </strong>
+            <a href="https://www.frontiersin.org/articles/10.3389/fncel.2018.00181/full" target="_blank">
+            <span class="color_link">https://www.frontiersin.org/articles/10.3389/fncel.2018.00181/full</span>
+            </a>
+	 </p>
+     </div>
+     <table align="center" height="4" width =85%>
+	<tr>
+		<th bgcolor="990000"></th>
+		<th bgcolor="FF0000"></th>
+		<th bgcolor="FFFF00"></th>
+		<th bgcolor="FFFF99"></th>
+		<th bgcolor="00CCFF"></th>
+		<th bgcolor="0000FF"></th>
+		<th bgcolor="9900CC"></th>
+	</tr>      
+      </table>
+      <br>
+      <div id ="rcorners1">
+         <h3>Abstract:</h3>
+              We present detailed models of pyramidal cells from human neocortex, including models on their excitatory synapses,
+	      dendritic spines, dendritic NMDA- and somatic/axonal Na+ spikes that provided new insights into signal processing
+	      and computational capabilities of these principal cells. Six human layer 2 and layer 3 pyramidal cells (HL2/L3 PCs)
+	      were modeled, integrating detailed anatomical and physiological data from both fresh and postmortem tissues from
+	      human temporal cortex. The models predicted particularly large AMPA- and NMDA-conductances per synaptic contact
+	      (0.88 and 1.31 nS, respectively) and a steep dependence of the NMDA-conductance on voltage. These estimates were
+	      based on intracellular recordings from synaptically-connected HL2/L3 pairs, combined with extra-cellular current
+	      injections and use of synaptic blockers, and the assumption of five contacts per synaptic connection. A large dataset
+	      of high-resolution reconstructed HL2/L3 dendritic spines provided estimates for the EPSPs at the spine head
+	      (12.7 ± 4.6 mV), spine base (9.7 ± 5.0 mV), and soma (0.3 ± 0.1 mV), and for the spine neck resistance (50–80 MO).
+	      Matching the shape and firing pattern of experimental somatic Na+-spikes provided estimates for the density of the
+	      somatic/axonal excitable membrane ion channels, predicting that 134 ± 28 simultaneously activated HL2/L3-HL2/L3 synapses
+	      are required for generating (with 50% probability) a somatic Na+ spike. Dendritic NMDA spikes were triggered in the
+	      model when 20 ± 10 excitatory spinous synapses were simultaneously activated on individual dendritic branches.
+	      The particularly large number of basal dendrites in HL2/L3 PCs and the distinctive cable elongation of their terminals
+	      imply that ~25 NMDA-spikes could be generated independently and simultaneously in these cells, as compared to ~14 in
+	      L2/3 PCs from the rat somatosensory cortex. These multi-sites non-linear signals, together with the large (~30,000)
+	      excitatory synapses/cell, equip human L2/L3 PCs with enhanced computational capabilities. Our study provides the most
+	      comprehensive model of any human neuron to-date demonstrating the biophysical and computational distinctiveness
+	      of human cortical neurons.
+      </div>
+      <div class="main">   
+      	<div class="row">
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell0603_03_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_06_cell03_789_H41_03.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_060303.html"
+				height=270px width=100% frameBorder="0"></iframe>
+		</div>
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell0603_08_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_06_cell08_876_H41_05_Cell2.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_060308.html"
+				height=270px width=100% frameBorder="0"></iframe>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell0603_11_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_06_cell11_1125_H41_06.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_060311.html"
+				height=270px width=100% frameBorder="0"></iframe>
+		</div>
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell1303_03_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_13_cell03_1204_H42_02.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_130303.html"
+				height=270px width=100% frameBorder="0"></iframe>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell1303_05_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_13_cell05_675_H42_04.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_130305.html"
+				height=270px width=100% frameBorder="0"></iframe>			
+		</div>
+		<div class="col-md-1">
+			<a href="https://blue-naas.humanbrainproject.eu/#/url/human_cells/cell1303_06_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000">
+				<img src="Fig7/2013_03_13_cell06_945_H42_05.png">
+			</a>
+		</div>
+		<div class = "col-md-5">
+			<iframe src="plots/Cell_130306.html"
+				height=270px width=100% frameBorder="0"></iframe>			
+		</div>
+	</div>
+	<br>
+ 	<table align="center" height="4" width =85%>
+		<tr>
+			<th bgcolor="990000"></th>
+			<th bgcolor="FF0000"></th>
+			<th bgcolor="FFFF00"></th>
+			<th bgcolor="FFFF99"></th>
+			<th bgcolor="00CCFF"></th>
+			<th bgcolor="0000FF"></th>
+			<th bgcolor="9900CC"></th>
+		</tr>      
+      </table>
+      <br>
+
+
+      	<h5>Resources</h5>
+      	<p>Data and models: all data and models used in the paper are available at the links reported below:
+      	</p>
+      	<ul class="collapsible" data-collapsible="expandable">
+         <li class="active">
+            <div class="collapsible-header amber lighten-5">
+               <i class="material-icons">settings_input_antenna</i>Morphologies
+            </div>
+            <!-- option: leak_remove -->
+            <div class="collapsible-body ">
+               <p>Morphology files (in .asc format) used in the paper for each etype (see Table S5 of the Supplementary Material):</p>
+               <div style="margin-left:25px">
+                  <table class="striped">
+                     <tbody>
+                        <tr>
+                           <td>
+                              2013_03_06_cell03_789_H41_03
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_06_cell03_789_H41_03.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=b161481b-44c4-4542-b289-09a40df8aa0b&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.022d44be-bf8d-452a-a436-f14794cf5676%2Cexternal" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>
+                        </tr>
+			 <tr>
+                           <td>
+                              2013_03_06_cell08_876_H41_05_Cell2
+                           </td>
+                           <td>
+                              <a href="https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/human_cells/cell0603_08_model_602/morphology/2013_03_06_cell08_876_H41_05_Cell2.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=8834bf84-b819-4ab0-9ca0-bc5a556887e3&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.5bb35857-007e-4168-b0f2-d6f62aec91d7%2Cexternal" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>
+                        </tr>
+			<tr>
+                           <td>
+                              2013_03_06_cell11_1125_H41_06
+                           </td>
+                           <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=f42ce1b9-611b-4862-a495-b7ebf99c5daa&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.fbc08765-e3b3-4365-8f05-40d9f4a64756%2Cexternal" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/human_cells/cell0603_11_model_937/morphology/2013_03_06_cell11_1125_H41_06.ASC" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>			
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell03_1204_H42_02
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell03_1204_H42_02.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=505b0cbd-a4a5-47da-b6ae-b23bead3408b&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.e2da9168-da92-4cb8-b7cb-bd1786d992a7%2Cexternal" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>				      
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell05_675_H42_04
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell05_675_H42_04.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=7f4a24c7-bf2d-4118-a321-62166a3dcd3f&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.38081019-4428-4eb9-9174-dbb69703987a%2Cexternal" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>				      
+                        </tr>
+			      <tr>
+                           <td>
+                              2013_03_13_cell06_945_H42_05
+                           </td>
+                           <td>
+                              <a href="https://github.com/YoniLeibner/hbp-bsp-live-papers/blob/master/Morphs/2013_03_13_cell06_945_H42_05.ASC" class="waves-effect waves-light">
+                              <i class="material-icons left">archive</i>Download
+                              </a>
+                           </td>
+			   <td>
+                              <a href="https://neuroinformatics.nl/HBP/morphology-viewer-dev/?hbp-model-instance-id=4a100a55-ed0d-4f1b-82a2-44e56f5f5362&referrer=https%3A%2F%2Fcollab.humanbrainproject.eu%2F%23%2Fcollab%2F1655%2Fnav%2F75901%3Fstate%3Dmodel.e8aec8c4-f080-4ea4-91ae-2b7c0b5ef02b%2Cexternal" target="_blank" class="waves-effect waves-light">
+                              <i class="material-icons left">3d_rotation</i>View
+                              </a>
+                           </td>			     
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </li>
+      </ul>
+      <br>
+      <br>
+    </div>
+   </body>
+</html>
